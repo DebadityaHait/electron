@@ -27,7 +27,7 @@ Commit-Queue: Liam Brady <lbrady@google.com>
 Cr-Commit-Position: refs/heads/main@{#1644883}
 
 diff --git a/content/browser/renderer_host/navigation_request.cc b/content/browser/renderer_host/navigation_request.cc
-index c30711ae742722993f02640eeceb2eb5e80c35c2..b5a8b4cc1fe33f8c24a1f21e256eba38ce698637 100644
+index 10a0c26e40602047c235b93c1e63f3e32c1b2d35..04f180011dc7648a697451fa29f98a7de7c22680 100644
 --- a/content/browser/renderer_host/navigation_request.cc
 +++ b/content/browser/renderer_host/navigation_request.cc
 @@ -1821,6 +1821,7 @@ NavigationRequest::NavigationRequest(
@@ -64,7 +64,7 @@ index c30711ae742722993f02640eeceb2eb5e80c35c2..b5a8b4cc1fe33f8c24a1f21e256eba38
            common_params_->has_possibly_filtered_user_gesture, false,
            frame_tree_node_->IsOutermostMainFrame(),
            frame_tree_node_->frame_tree().is_prerendering(),
-@@ -6012,7 +6014,7 @@ void NavigationRequest::AddResourceTimingEntryForFailedSubframeNavigation(
+@@ -6020,7 +6022,7 @@ void NavigationRequest::AddResourceTimingEntryForFailedSubframeNavigation(
    GetParentFrame()->AddResourceTimingEntryForFailedSubframeNavigation(
        frame_tree_node(), common_params().navigation_start,
        commit_params().navigation_timing->redirect_end,
@@ -73,7 +73,7 @@ index c30711ae742722993f02640eeceb2eb5e80c35c2..b5a8b4cc1fe33f8c24a1f21e256eba38
        std::move(response_head), allow_response_details, status);
  }
  
-@@ -7657,9 +7659,8 @@ bool NavigationRequest::IsAllowedByCSPDirective(
+@@ -7665,9 +7667,8 @@ bool NavigationRequest::IsAllowedByCSPDirective(
      url = common_params_->url;
    }
    network::CSPCheckResult result = context->IsAllowedByCsp(
@@ -85,7 +85,7 @@ index c30711ae742722993f02640eeceb2eb5e80c35c2..b5a8b4cc1fe33f8c24a1f21e256eba38
    if (result.WouldBlockIfWildcardDoesNotMatchWs()) {
      GetContentClient()->browser()->LogWebFeatureForCurrentPage(
          GetParentFrame(),
-@@ -7812,6 +7813,7 @@ net::Error NavigationRequest::CheckContentSecurityPolicy(
+@@ -7820,6 +7821,7 @@ net::Error NavigationRequest::CheckContentSecurityPolicy(
        } else {
          commit_params_->original_url = common_params_->url;
        }

@@ -162,7 +162,7 @@ index ce2f66ca3d87370eb6afb322ed65ed4bc048815c..a3fa715631b0bd3992643048c786394d
            blink::mojom::WasActivatedOption::kUnknown,
            base::UnguessableToken::Create(),
 diff --git a/content/browser/renderer_host/navigation_request.cc b/content/browser/renderer_host/navigation_request.cc
-index 6a97b305959dc75d396ab63bb52c1be3ef6d0502..c1610b6bd5ac08eee79df3735a723efbeb951b2b 100644
+index f73b53b7fea3304d37ec6f1074b629cb92b1aa8b..939f24454158707162398c69d8415f82dc03409c 100644
 --- a/content/browser/renderer_host/navigation_request.cc
 +++ b/content/browser/renderer_host/navigation_request.cc
 @@ -1432,6 +1432,16 @@ std::unique_ptr<NavigationRequest> NavigationRequest::CreateRendererInitiated(
@@ -249,7 +249,7 @@ index 6a97b305959dc75d396ab63bb52c1be3ef6d0502..c1610b6bd5ac08eee79df3735a723efb
  
    // Store the browser's view of the fenced frame properties along with any
    // embedder context for shared storage in the`NavigationRequest`. Upon commit,
-@@ -7761,7 +7795,17 @@ net::Error NavigationRequest::CheckContentSecurityPolicy(
+@@ -7769,7 +7803,17 @@ net::Error NavigationRequest::CheckContentSecurityPolicy(
        network::UpgradeInsecureRequest(&common_params_->url);
        common_params_->referrer = Referrer::SanitizeForRequest(
            common_params_->url, *common_params_->referrer);
@@ -268,7 +268,7 @@ index 6a97b305959dc75d396ab63bb52c1be3ef6d0502..c1610b6bd5ac08eee79df3735a723efb
      }
    }
  
-@@ -8018,6 +8062,31 @@ void NavigationRequest::SanitizeRedirectsForCommit(
+@@ -8026,6 +8070,31 @@ void NavigationRequest::SanitizeRedirectsForCommit(
        redirect.new_url = redirect.new_url.DeprecatedGetOriginAsURL();
      }
    }

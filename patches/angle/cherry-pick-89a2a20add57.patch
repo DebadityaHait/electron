@@ -10,7 +10,7 @@ Reviewed-by: Shahbaz Youssefi <syoussefi@chromium.org>
 Commit-Queue: Quyen Le <lehoangquyen@google.com>
 
 diff --git a/src/libANGLE/Framebuffer.cpp b/src/libANGLE/Framebuffer.cpp
-index b89fcd0039115fccbc4e175c99501d9faf80551f..fb028313a9180eb2fbca3597d1c9d5a2fa2ceacb 100644
+index 93fbfe3d3813b0a48b88d3b766bc52532367e8d5..2b5c927fde093526a640baf5ed742733308419e5 100644
 --- a/src/libANGLE/Framebuffer.cpp
 +++ b/src/libANGLE/Framebuffer.cpp
 @@ -377,6 +377,22 @@ bool HasSupportedStencilBitCount(const Framebuffer *framebuffer)
@@ -132,7 +132,7 @@ index b89fcd0039115fccbc4e175c99501d9faf80551f..fb028313a9180eb2fbca3597d1c9d5a2
  }
  
  angle::Result Framebuffer::invalidateSub(const Context *context,
-@@ -2536,7 +2568,10 @@ angle::Result Framebuffer::ensureClearAttachmentsInitialized(const Context *cont
+@@ -2548,7 +2580,10 @@ angle::Result Framebuffer::ensureClearAttachmentsInitialized(const Context *cont
      // but are explicitly masked out here for clarity.
      const DrawBufferMask colorAttachmentsNeedingInit(mState.mResourceNeedsInit.bits() &
                                                       DrawBufferMask().set().bits());
@@ -144,7 +144,7 @@ index b89fcd0039115fccbc4e175c99501d9faf80551f..fb028313a9180eb2fbca3597d1c9d5a2
      {
          ANGLE_TRY(ensureDrawAttachmentsInitialized(context));
      }
-@@ -2611,8 +2646,9 @@ angle::Result Framebuffer::ensureClearBufferAttachmentsInitialized(const Context
+@@ -2623,8 +2658,9 @@ angle::Result Framebuffer::ensureClearBufferAttachmentsInitialized(const Context
              break;
      }
  
@@ -156,7 +156,7 @@ index b89fcd0039115fccbc4e175c99501d9faf80551f..fb028313a9180eb2fbca3597d1c9d5a2
      {
          ANGLE_TRY(mImpl->ensureAttachmentsInitialized(context, clearColorAttachments, clearDepth,
                                                        clearStencil));
-@@ -2740,6 +2776,51 @@ void Framebuffer::markAttachmentsInitialized(const DrawBufferMask &color, bool d
+@@ -2752,6 +2788,51 @@ void Framebuffer::markAttachmentsInitialized(const DrawBufferMask &color, bool d
      }
  }
  
@@ -208,7 +208,7 @@ index b89fcd0039115fccbc4e175c99501d9faf80551f..fb028313a9180eb2fbca3597d1c9d5a2
  Box Framebuffer::getDimensions() const
  {
      return mState.getDimensions();
-@@ -2801,28 +2882,31 @@ GLuint Framebuffer::getSupportedFoveationFeatures() const
+@@ -2813,28 +2894,31 @@ GLuint Framebuffer::getSupportedFoveationFeatures() const
      return mState.mFoveationState.getSupportedFoveationFeatures();
  }
  

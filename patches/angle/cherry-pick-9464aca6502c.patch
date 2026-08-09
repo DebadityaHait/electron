@@ -450,7 +450,7 @@ index d9a6f260b15b8f9c9a119216c45b7d045ed4fb95..dae43331148b007eba2f522fd5a32eb6
  42265757 PIXEL4ORXL GLES : TextureBufferTestES31.TextureBufferThenBufferData/* = SKIP
  
 diff --git a/src/tests/capture_replay_tests/capture_replay_expectations.txt b/src/tests/capture_replay_tests/capture_replay_expectations.txt
-index 5623896357538e62b89ca560a633ac3437b9d31d..63a832dd414f8e4ccd6eefdf0c7d6acf1ce421d5 100644
+index 980ca649be985f3e485b6a97de2a1ffdcd9b8660..f0bfcb6a2979a27f5c2409590f5822f24a17c930 100644
 --- a/src/tests/capture_replay_tests/capture_replay_expectations.txt
 +++ b/src/tests/capture_replay_tests/capture_replay_expectations.txt
 @@ -82,6 +82,7 @@

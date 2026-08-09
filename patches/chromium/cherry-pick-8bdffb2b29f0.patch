@@ -583,7 +583,7 @@ index 4af08c7efa8065e2e8fef5de7d36e5dcdaf2770d..07a0c0408ac743caca48c6e84d189ece
        services_;
    scoped_refptr<NavigationOrDocumentHandle> navigation_or_document_handle_;
 diff --git a/content/browser/renderer_host/navigation_request.cc b/content/browser/renderer_host/navigation_request.cc
-index c1610b6bd5ac08eee79df3735a723efbeb951b2b..c30711ae742722993f02640eeceb2eb5e80c35c2 100644
+index 939f24454158707162398c69d8415f82dc03409c..10a0c26e40602047c235b93c1e63f3e32c1b2d35 100644
 --- a/content/browser/renderer_host/navigation_request.cc
 +++ b/content/browser/renderer_host/navigation_request.cc
 @@ -1832,8 +1832,14 @@ NavigationRequest::NavigationRequest(
